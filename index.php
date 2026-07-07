@@ -15,7 +15,7 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h1> Student Management Dashboard </h1>
-
+    <p> <a href="add.php">Add New Student</a> </p>
     <table border="1">
         <thead>
             <tr>
