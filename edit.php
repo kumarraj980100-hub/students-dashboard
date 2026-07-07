@@ -39,19 +39,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit student</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+    <div class="card">
     <h1>Edit Student</h1>
     <form method="POST">
         <label>Name:</label>
-        <input type="text" name="name" value="<?php echo htmlspecialchars($student['name']); ?>" required><br>
+        <input type="text" name="name" value="<?php echo htmlspecialchars($student['name']); ?>" required>
         <label>Age:</label>
-        <input type="number" name="age" value="<?php echo htmlspecialchars($student['age']); ?>" required><br>
+        <input type="number" name="age" value="<?php echo htmlspecialchars($student['age']); ?>" required>
         <label>Email:</label>
-        <input type="email" name="email" value="<?php echo htmlspecialchars($student['email']); ?>" required><br>
-        <input type="submit" value="Update Student">
+        <input type="email" name="email" value="<?php echo htmlspecialchars($student['email']); ?>" required>
+        <div style="margin-top:14px">
+            <input class="btn primary" type="submit" value="Update Student">
+            <a class="btn ghost" href="index.php">Back</a>
+        </div>
     </form>
-    <br>
-    <a href="index.php">Back </a>
+    </div>
+    </div>
 </body>
 </html>

@@ -12,11 +12,17 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard </title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Student Management Dashboard </h1>
-    <p> <a href="add.php">Add New Student</a> </p>
-    <table border="1">
+    <div class="container">
+    <div class="card">
+    <h1>Student Management Dashboard</h1>
+    <div class="toolbar">
+        <div class="muted">Manage your student records quickly and easily.</div>
+        <div><a class="btn primary" href="add.php">Add New Student</a></div>
+    </div>
+    <table class="students">
         <thead>
             <tr>
                 <th>ID</th>
@@ -36,12 +42,14 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
          <td><?= $student['age']; ?></td>
          <td><?= htmlspecialchars($student['email']); ?></td>
          <td><?= $student['created_at']; ?></td>
-         <td>
-             <a href="edit.php?id=<?= $student['id']; ?>">Edit</a>
-             <a href="delete.php?id=<?= $student['id']; ?>" onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
+         <td class="actions">
+             <a class="btn ghost" href="edit.php?id=<?= $student['id']; ?>">Edit</a>
+             <a class="btn danger" href="delete.php?id=<?= $student['id']; ?>" onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
          </tr>
          <?php endforeach; ?>
          </tbody>
     </table>
+    </div>
+    </div>
 </body>
 </html>
