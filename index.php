@@ -3,7 +3,7 @@ require "db.php";
 $sql = "SELECT * FROM students ORDER BY id DESC";
 $stmt = $pdo->query($sql);
 $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+// key = kumarraj980100@gmail.com
 ?>
 
 <!DOCTYPE html>
